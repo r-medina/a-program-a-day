@@ -29,30 +29,27 @@ func StringToWords(str string) ([]string, error) {
 }
 
 func stringToSounds(s string) ([][]string, error) {
-	i, err := strconv.Atoi(s)
+	digits, err := stringToDigits(s)
 	if err != nil {
-		return nil, fmt.Errorf("failed int conversion: %v", err)
+		return nil, fmt.Errorf("error getting digits from %q: %v", err)
 	}
 
-	d := iToDigits(i)
-
-	return digitsToSounds(d)
+	return digitsToSounds(digits)
 }
 
 func stringToDigits(s string) ([]int, error) {
 	digits := []int{}
-	// This loop adds each digit to a slice (starting with the 1s place).
-	// It will come out backwards, but is reversed before return.
 	for i, c := range s {
-		d, err := strconv.Atoi(c)
+		if c == '.' || c == ',' {
+			continue
+		}
+		d, err := strconv.Atoi(string(c))
 		if err != nil {
 			return nil, fmt.Errorf("error converting %q digit %: %v", c, i, err)
 		}
 		digits = append(digits, d)
 		i /= 10
 	}
-
-	reverse(digits)
 
 	return digits, nil
 
@@ -103,7 +100,7 @@ func printSounds(sounds [][]string) {
 			fmt.Printf("/%s/", idk)
 			isFirst = false
 		}
-		fmt.Print("]")
+		fmt.Print("] ")
 	}
 	fmt.Println()
 }
