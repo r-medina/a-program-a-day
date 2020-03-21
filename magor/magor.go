@@ -2,6 +2,8 @@
 
 // TODO: probably remove decimals
 
+// TODO: problem with '...' in zshell
+
 package main
 
 import (
@@ -24,6 +26,8 @@ var digitToSound = map[int][]string{
 	9: []string{"p", "b"},
 }
 
+// StringToWords takes a string containing numbers and returns a list of words
+// that can be used to memorize the numbers
 func StringToWords(str string) ([]string, error) {
 	return nil, nil
 }
@@ -31,7 +35,7 @@ func StringToWords(str string) ([]string, error) {
 func stringToSounds(s string) ([][]string, error) {
 	digits, err := stringToDigits(s)
 	if err != nil {
-		return nil, fmt.Errorf("error getting digits from %q: %v", err)
+		return nil, fmt.Errorf("error getting digits from %q: %v", s, err)
 	}
 
 	return digitsToSounds(digits)
@@ -45,7 +49,7 @@ func stringToDigits(s string) ([]int, error) {
 		}
 		d, err := strconv.Atoi(string(c))
 		if err != nil {
-			return nil, fmt.Errorf("error converting %q digit %: %v", c, i, err)
+			return nil, fmt.Errorf("error converting %q digit %d: %v", c, i, err)
 		}
 		digits = append(digits, d)
 		i /= 10
@@ -53,20 +57,6 @@ func stringToDigits(s string) ([]int, error) {
 
 	return digits, nil
 
-}
-
-func iToDigits(i int) []int {
-	digits := []int{}
-	// This loop adds each digit to a slice (starting with the 1s place).
-	// It will come out backwards, but is reversed before return.
-	for i != 0 {
-		digits = append(digits, i%10)
-		i /= 10
-	}
-
-	reverse(digits)
-
-	return digits
 }
 
 func digitsToSounds(digits []int) ([][]string, error) {
