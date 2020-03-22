@@ -44,7 +44,7 @@ func stringToSounds(s string) ([][]string, error) {
 func stringToDigits(s string) ([]int, error) {
 	digits := []int{}
 	for i, c := range s {
-		if c == '.' || c == ',' {
+		if c == '.' || c == ',' || c == '-' {
 			continue
 		}
 		d, err := strconv.Atoi(string(c))
