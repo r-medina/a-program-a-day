@@ -1,7 +1,14 @@
 # `magor`
 
-I've been trying to use the [Mnemonic major system](https://en.wikipedia.org/wiki/Mnemonic_major_system)
-in my own life tohelp with memorizing numbers. The basic idea with this system is t
+I've been trying to use the [Mnemonic major
+system](https://en.wikipedia.org/wiki/Mnemonic_major_system) in my own life
+tohelp with memorizing numbers. The basic idea with this system is that each
+number/digit maps to a consonant sound and then you can use those sounds to make
+words that are more memorable than the numbers themselves.
+
+For example let's say the code for your new bike lock is: 2217. From that you
+get `/n/ /n/ /d/ /g/` and you can map that to the phrase "neon dog" (which is,
+indeed, way more memorable.)
 
 While I have the system memorized, I'm still not 100% fluent with it (sometimes
 I lack the imagination to come up with good words). I thought a program could
@@ -25,4 +32,5 @@ It turns out that there is no good API for word pronounciations (that's
 free). [Princeton's WordNet database](https://wordnet.princeton.edu/) doesn't
 have pronounciations either.
 
-Potential future work could be to make the output nicer and more helpful!
+Potential future work could be to make the output nicer and more helpful! Also,
+getting this to actually output words would be awesome.
