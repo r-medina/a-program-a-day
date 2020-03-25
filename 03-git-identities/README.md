@@ -15,3 +15,5 @@ Steps:
 - save identities to git config
 - make alias
 - set for individual projects
+- git config --global commit.gpgsign true
+- git config --global credential.helper = osxkeychain
