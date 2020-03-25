@@ -22,3 +22,8 @@ be used to create words which help memorize the number. More info
 [in the README](01-magor/README.md)!
 
 ### Day 2-3: [`hl-linum`](02-hl-linum/)
+
+### Project 3: `git-identities`
+
+This project was just my notes to finally get a handle on setting up my Git
+identities, so I can push signed commits.
