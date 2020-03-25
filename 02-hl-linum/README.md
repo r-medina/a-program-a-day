@@ -27,3 +27,9 @@ which lets sequential bindins depend on the ones prior.
 emacs overlays! Thank you reddit! https://emacs.stackexchange.com/questions/2200/what-are-overlays-for-and-how-do-they-differ-from-text-properties
 
 https://www.gnu.org/software/emacs/manual/html_node/elisp/Managing-Overlays.html
+
+https://emacs.stackexchange.com/questions/15078/inserting-before-an-after-string-overlay
+
+https://www.gnu.org/software/emacs/manual/html_node/eintr/save_002dexcursion.html
+
+perhaps want to use `post-command-hook` like in [hl-line](https://github.com/emacs-mirror/emacs/blob/master/lisp/hl-line.el)
