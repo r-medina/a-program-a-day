@@ -17,3 +17,4 @@ Steps:
 - set for individual projects
 - git config --global commit.gpgsign true
 - git config --global credential.helper = osxkeychain
+
